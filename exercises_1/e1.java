@@ -11,15 +11,18 @@ public class e1 {
         System.out.println("Enter an integer number:");
 
         String num = scan.nextLine();
-        int remainder = Integer.parseInt(num) % 2;
 
         String evenOrOdd = "";
 
-        if(remainder == 0){
-            evenOrOdd = " is even.";
-        }else if(remainder == 1){
-            evenOrOdd = " is odd.";
-        }else{ // Always reports error before this step. The reason is in parseInt(num);
+        try{
+            int remainder = Integer.parseInt(num) % 2;
+
+            if (remainder == 0) {
+                evenOrOdd = " is even.";
+            } else {
+                evenOrOdd = " is odd.";
+            }
+        }catch(NumberFormatException e){
             evenOrOdd = " isn't an integer number.";
         }
 
